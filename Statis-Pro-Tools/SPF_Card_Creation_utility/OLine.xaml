@@ -1,0 +1,172 @@
+﻿<Window x:Class="SPF_Card_Creation_utility.OLine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SPF_Card_Creation_utility"
+                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="OLine" Height="821" Width="1392">
+    <Grid>
+        <Grid x:Name="card" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="1507">
+            <materialDesign:Card Padding="0" Height="70" Background="{DynamicResource ResourceKey=PrimaryHueMidBrush}">
+                <Grid HorizontalAlignment="Left" Width="79" MouseLeftButtonDown="backclick">
+                    <materialDesign:PackIcon x:Name="backicon" Kind="ArrowLeft" Height="Auto" Margin="10,8.667,0,10" VerticalAlignment="Stretch" Width="51.333" Foreground="#42000000"/>
+                </Grid>
+
+            </materialDesign:Card>
+
+        </Grid>
+        <Label x:Name="label0" Content="Offensive Line" Margin="73,0,235,0" VerticalAlignment="Top" Height="70" FontSize="45" Foreground="#DD000000" VerticalContentAlignment="Center"/>
+
+        <TextBox x:Name="txb_rushyards" HorizontalAlignment="Left" Height="22" Margin="126,368,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbl_rushyards" Content="Team Rushing Yards:" HorizontalAlignment="Left" Margin="18,367,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txb_passyards" HorizontalAlignment="Left" Height="22" Margin="126,0,0,373" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+        <Label x:Name="lbl_sacks" Content="Team Sacks:" HorizontalAlignment="Left" Margin="60,394,0,374" FontFamily="Times New Roman" Padding="0" VerticalContentAlignment="Center"/>
+        <Grid x:Name="OL1Grid" HorizontalAlignment="Left" Height="234" Margin="18,88,0,0" VerticalAlignment="Top" Width="171">
+            <Grid>
+                <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Stroke="Black" VerticalAlignment="Top" Width="171"/>
+                <Label x:Name="lbl_OL1_blocks" Content="BLOCKS:" HorizontalAlignment="Left" Margin="0,90,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontWeight="Bold" Width="171" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lbl_bv1" Content="0" HorizontalAlignment="Left" Margin="0,114,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" Width="171" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" Height="15" Padding="0"/>
+                <Label x:Name="lbl_OL1_blocks_Copy" Content="PASS BLOCKS:" HorizontalAlignment="Left" Margin="0,146,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontWeight="Bold" Width="171" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lbl_pbv1" Content="0" HorizontalAlignment="Left" Margin="0,170,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" Width="171" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" Height="15" Padding="0"/>
+            </Grid>
+            <Rectangle x:Name="rct_bck" HorizontalAlignment="Left" Height="59" Stroke="Black" VerticalAlignment="Top" Width="171"/>
+            <Label x:Name="lbl_team1" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="12" Width="171" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="8" FontWeight="Bold"/>
+            <Label x:Name="lbl_name1" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="171" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" Margin="0,17,0,0" FontSize="14"/>
+            <Label x:Name="lbl_position1" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="14" Width="171" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="11" Margin="0,39,0,0"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="255" Margin="270.5,88,0,0" VerticalAlignment="Top" Width="271" d:LayoutOverrides="HorizontalAlignment">
+
+            <TextBox x:Name="txb_fname1" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname1" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy1" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv1" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy2" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv1" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy3" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos1" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy4" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label" Content="Lineman 1" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Button x:Name="btn_g_linemen" Content="GENERATE LINEMEN" HorizontalAlignment="Left" Margin="76,453,0,0" VerticalAlignment="Top" Width="170" Click="btn_g_linemen_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontFamily="/SPF_Card_Creation_utility;component/Fonts/#Roboto Medium"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="76,0,0,336.4" VerticalAlignment="Bottom" Width="120" IsSynchronizedWithCurrentItem="False"/>
+        <Button x:Name="btn_gen_card" Content="GENERATE CARD" HorizontalAlignment="Left" Margin="76,490,0,0" VerticalAlignment="Top" Width="170" Click="btn_gen_card_Click" Foreground="Black" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="/SPF_Card_Creation_utility;component/Fonts/#Roboto Medium"/>
+        <Button x:Name="btn_print_cards" Content="PRINT CARD" HorizontalAlignment="Left" Margin="76,527,0,0" VerticalAlignment="Top" Width="170" Click="btn_print_card_Click" Foreground="Black" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="/SPF_Card_Creation_utility;component/Fonts/#Roboto Medium"/>
+        <ComboBox x:Name="cmb_team" HorizontalAlignment="Left" Margin="126,341,0,0" VerticalAlignment="Top" Width="120"/>
+        <Grid HorizontalAlignment="Left" Height="255" Margin="541.5,88,0,0" VerticalAlignment="Top" Width="271">
+
+            <TextBox x:Name="txb_fname2" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy5" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname2" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy6" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv2" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy7" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv2" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy8" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos2" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy9" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label1" Content="Lineman 2" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="255" Margin="812.5,88,0,0" VerticalAlignment="Top" Width="271">
+
+            <TextBox x:Name="txb_fname3" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy10" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname3" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy11" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv3" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy12" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv3" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy13" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos3" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy14" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label2" Content="Lineman 3" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="255" Margin="1103,88,0,0" VerticalAlignment="Top" Width="271">
+
+            <TextBox x:Name="txb_fname4" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy15" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname4" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy16" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv4" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy17" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv4" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy18" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos4" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy19" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label3" Content="Lineman 4" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="270.5,337.6,0,197.4" Width="271" d:LayoutOverrides="HorizontalAlignment">
+
+            <TextBox x:Name="txb_fname5" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy20" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname5" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy21" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv5" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy22" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv5" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy23" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos5" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy24" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label4" Content="Lineman 5" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="546.5,337.6,0,197.4" Width="271">
+
+            <TextBox x:Name="txb_fname6" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy25" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname6" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy26" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv6" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy27" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv6" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy28" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos6" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy29" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label5" Content="Lineman 6" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="832,337.6,0,197.4" Width="271">
+
+            <TextBox x:Name="txb_fname7" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy30" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname7" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy31" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv7" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy32" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv7" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy33" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos7" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy34" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label6" Content="Lineman 7" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="1113,337.6,0,197.4" Width="271">
+
+            <TextBox x:Name="txb_fname8" HorizontalAlignment="Left" Height="22" Margin="131,67,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy35" Content="Lineman First Name:" HorizontalAlignment="Left" Margin="9,67,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_sname8" HorizontalAlignment="Left" Height="22" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy36" Content="Lineman Surname:" HorizontalAlignment="Left" Margin="21,93,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_rbv8" HorizontalAlignment="Left" Height="22" Margin="131,0,0,80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy37" Content="Lineman RBV:" HorizontalAlignment="Left" Margin="47.529,0,0,80" VerticalAlignment="Bottom" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pbv8" HorizontalAlignment="Left" Height="22" Margin="131,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy38" Content="Lineman PBV:" HorizontalAlignment="Left" Margin="48.026,180,0,0" VerticalAlignment="Top" Height="22" Padding="0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txb_pos8" HorizontalAlignment="Left" Margin="131,120,0,113" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Label x:Name="lbl_passyards_Copy39" Content="Lineman Position:" HorizontalAlignment="Left" Margin="19.846,120,0,113" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="label7" Content="Lineman 8" Margin="11,10,20,0" Height="24" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+    </Grid>
+</Window>

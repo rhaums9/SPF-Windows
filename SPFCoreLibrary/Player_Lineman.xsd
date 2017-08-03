@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Player_Lineman"
+    targetNamespace="http://tempuri.org/Player_Lineman.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/Player_Lineman.xsd"
+    xmlns:mstns="http://tempuri.org/Player_Lineman.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="Player">
+    <xs:element name="Fname" type="xs:string"/>
+
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="teamData"
+    targetNamespace="http://tempuri.org/teamData.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/teamData.xsd"
+    xmlns:mstns="http://tempuri.org/teamData.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="LeagueTeam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="teamName" type="xs:string"/>
+        <xs:element name="headCoach" type="xs:string"/>
+        <xs:element name="mainColor" type="xs:string"/>
+        <xs:element name="secondColor" type="xs:string"/>
+        <xs:element name="teamRecord">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Wins" type="xs:int"/>
+              <xs:element name="Loss" type="xs:int"/>
+              <xs:element name="Ties" type="xs:int"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

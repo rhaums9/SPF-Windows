@@ -1,0 +1,213 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:SPF_Card_Creation_utility"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="SPF_Card_Creation_utility.SkillCreator"
+        mc:Ignorable="d"
+        Title="SkillCreator" Height="475.5" Width="717.372">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Background" Color="#1F26A0DA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Border" Color="#A826A0DA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" Color="#3D26A0DA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Border" Color="#FF26A0DA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" Color="#2E0080FF"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Border" Color="#99006CD9"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Background" Color="#3DDADADA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Border" Color="#FFDADADA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewFocus.Border" Color="#FF26A0DA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" Color="#5426A0DA"/>
+        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#FF26A0DA"/>
+        <Style x:Key="ComboBoxItemStyle1" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Padding" Value="4,1"/>
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="False"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsKeyboardFocused" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHover.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHover.Border}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                    <Condition Property="IsMouseOver" Value="False"/>
+                                    <Condition Property="IsKeyboardFocused" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelected.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelected.Border}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedHover.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedHover.Border}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                    <Condition Property="IsMouseOver" Value="False"/>
+                                    <Condition Property="IsKeyboardFocused" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedNoFocus.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedNoFocus.Border}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="False"/>
+                                    <Condition Property="IsMouseOver" Value="False"/>
+                                    <Condition Property="IsKeyboardFocused" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewFocus.Border}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="False"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsKeyboardFocused" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHoverFocus.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHoverFocus.Border}"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <StackPanel IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+
+    </Window.Resources>
+    <Grid Background="#FFFAFAFA">
+        <Grid HorizontalAlignment="Left" Height="234" Margin="10,79,0,0" VerticalAlignment="Top" Width="171">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Stroke="Black" VerticalAlignment="Top" Width="171"/>
+            <Rectangle x:Name="rct_bck" HorizontalAlignment="Left" Height="53" Stroke="Black" VerticalAlignment="Top" Width="171"/>
+            <Label x:Name="lbl_team" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="12" Width="171" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="8" FontWeight="Bold"/>
+            <Label x:Name="lbl_name" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="171" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" Margin="0,12,0,0" FontSize="10"/>
+            <Label x:Name="lbl_position" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="14" Width="171" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="9" Margin="0,29,0,0"/>
+            <Label x:Name="label_Copy" Content="Recieving" HorizontalAlignment="Left" Margin="91,66,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="10" FontWeight="Bold" Padding="0" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy1" Content="Rushing" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="10" FontWeight="Bold" Padding="0" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy2" Content="1:" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy3" Content="2:" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy4" Content="3:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy5" Content="4:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy6" Content="5:" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy7" Content="6:" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy8" Content="7:" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy9" Content="8:" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy10" Content="9:" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy11" Content="10:" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy12" Content="11:" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy13" Content="12:" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy14" Content="1:" HorizontalAlignment="Left" Margin="91,78,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy15" Content="2:" HorizontalAlignment="Left" Margin="91,87,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy16" Content="3:" HorizontalAlignment="Left" Margin="91,96,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy17" Content="4:" HorizontalAlignment="Left" Margin="91,105,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy18" Content="5:" HorizontalAlignment="Left" Margin="91,114,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy19" Content="6:" HorizontalAlignment="Left" Margin="91,123,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy20" Content="7:" HorizontalAlignment="Left" Margin="91,132,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy21" Content="8:" HorizontalAlignment="Left" Margin="91,141,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy22" Content="9:" HorizontalAlignment="Left" Margin="91,150,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy23" Content="10:" HorizontalAlignment="Left" Margin="91,159,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy24" Content="11:" HorizontalAlignment="Left" Margin="91,168,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="label_Copy25" Content="12:" HorizontalAlignment="Left" Margin="91,177,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing1" Content="" HorizontalAlignment="Left" Margin="22,78,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing2" Content="" HorizontalAlignment="Left" Margin="22,87,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing3" Content="" HorizontalAlignment="Left" Margin="22,96,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing4" Content="" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing5" Content="" HorizontalAlignment="Left" Margin="22,114,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing6" Content="" HorizontalAlignment="Left" Margin="22,123,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing7" Content="" HorizontalAlignment="Left" Margin="22,132,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing8" Content="" HorizontalAlignment="Left" Margin="22,141,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing9" Content="" HorizontalAlignment="Left" Margin="22,150,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing10" Content="" HorizontalAlignment="Left" Margin="22,159,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing11" Content="" HorizontalAlignment="Left" Margin="22,168,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_rushing12" Content="" HorizontalAlignment="Left" Margin="22,177,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing1" Content="" HorizontalAlignment="Left" Margin="108,78,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing2" Content="" HorizontalAlignment="Left" Margin="108,87,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing3" Content="" HorizontalAlignment="Left" Margin="108,96,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing4" Content="" HorizontalAlignment="Left" Margin="108,105,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing5" Content="" HorizontalAlignment="Left" Margin="108,114,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing6" Content="" HorizontalAlignment="Left" Margin="108,123,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing7" Content="" HorizontalAlignment="Left" Margin="108,132,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing8" Content="" HorizontalAlignment="Left" Margin="108,141,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing9" Content="" HorizontalAlignment="Left" Margin="108,150,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing10" Content="" HorizontalAlignment="Left" Margin="108,159,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing11" Content="" HorizontalAlignment="Left" Margin="108,168,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_passing12" Content="" HorizontalAlignment="Left" Margin="108,177,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="8" Padding="0" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lbl_end2" Content="Rushing" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="10" FontWeight="Bold" Padding="0" Width="70" VerticalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="293" Margin="235,79,0,0" VerticalAlignment="Top" Width="464" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="0.5" Color="#FFE0E0E0"/>
+            </Grid.Effect>
+            <TextBox x:Name="txt_rushattempts" HorizontalAlignment="Left" Height="21" Margin="393,84,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label" Content="Rushing Attempts:" HorizontalAlignment="Left" Margin="246,84,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <Label x:Name="label1" Content="Player Information" HorizontalAlignment="Left" VerticalAlignment="Top" Width="444" FontFamily="./#Roboto Medium" FontSize="21" Foreground="#DD000000" Height="39" Margin="10,10,0,0"/>
+            <TextBox x:Name="txt_rushyards" HorizontalAlignment="Left" Height="21" Margin="393,110,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label_Copy26" Content="Rushing Yards:" HorizontalAlignment="Left" Margin="246,110,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <TextBox x:Name="txt_rushlongest" HorizontalAlignment="Left" Height="21" Margin="393,136,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label_Copy27" Content="Longest Rush:" HorizontalAlignment="Left" Margin="246,136,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <TextBox x:Name="txt_rushaverage" HorizontalAlignment="Left" Height="21" Margin="393,162,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label_Copy28" Content="Average Rush:" HorizontalAlignment="Left" Margin="246,162,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <TextBox x:Name="txt_reclongest" HorizontalAlignment="Left" Height="21" Margin="393,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label_Copy31" Content="Longest Reception:" HorizontalAlignment="Left" Margin="246,230,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <TextBox x:Name="txt_recaverage" HorizontalAlignment="Left" Height="21" Margin="393,256,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label_Copy32" Content="Average Reception:" HorizontalAlignment="Left" Margin="246,256,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <TextBox x:Name="txt_recattempts" HorizontalAlignment="Left" Height="21" Margin="393,204,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Label x:Name="label_Copy29" Content="Receptions:" HorizontalAlignment="Left" Margin="246,204,0,0" VerticalAlignment="Top" FontFamily="./#Roboto" FontSize="13" Height="21" Padding="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="142" Foreground="#89000000"/>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="132" FontFamily="./#Roboto" FontSize="13" Style="{DynamicResource ComboBoxStyle1}" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}">
+                <System:String>Running Back</System:String>
+                <System:String>Tight End</System:String>
+                <System:String>Wide Receiver</System:String>
+            </ComboBox>
+            <ComboBox x:Name="comboBox_team" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="132" FontFamily="./#Roboto" FontSize="13" Style="{DynamicResource ComboBoxStyle1}" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}">
+                <System:String>Running Back</System:String>
+                <System:String>Tight End</System:String>
+                <System:String>Wide Receiver</System:String>
+            </ComboBox>
+            <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="21" Margin="10,110,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="132" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_sname" HorizontalAlignment="Left" Height="21" Margin="10,136,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="132" FontFamily="./#Roboto" FontSize="13" VerticalContentAlignment="Center" Foreground="#DD000000" BorderThickness="0,0,0,1"/>
+            <Button x:Name="btn_makeplayer" Content="MAKE PLAYER" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="110" Click="btn_makeplayer_Click" Height="36" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="/SPF_Card_Creation_utility;component/Fonts/#Roboto Medium" FontSize="14" Style="{DynamicResource ButtonStyle1}"/>
+            <Button x:Name="btn_exportimage" Content="EXPORT IMAGE" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="110" Click="btn_makeplayer_Click" Height="36" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="/SPF_Card_Creation_utility;component/Fonts/#Roboto Medium" FontSize="14"/>
+
+        </Grid>
+        <Grid x:Name="card" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="1507">
+            <materialDesign:Card Padding="0" Height="70" Background="{DynamicResource ResourceKey=PrimaryHueMidBrush}">
+                <Grid HorizontalAlignment="Left" Width="79" MouseLeftButtonDown="backclick">
+                    <materialDesign:PackIcon x:Name="backicon" Kind="ArrowLeft" Height="Auto" Margin="10,8.667,0,10" VerticalAlignment="Stretch" Width="51.333" Foreground="#42000000"/>
+                </Grid>
+
+            </materialDesign:Card>
+            <Label x:Name="label0" Content="Skill Player" Margin="73,0,235,0" VerticalAlignment="Top" Height="70" FontSize="45" Foreground="#DD000000" VerticalContentAlignment="Center"/>
+
+
+        </Grid>
+
+    </Grid>
+</Window>
